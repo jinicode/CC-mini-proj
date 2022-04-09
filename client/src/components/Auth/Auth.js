@@ -64,7 +64,7 @@ const Auth = () => {
     console.log(error);
     console.log("Google Sign In was unsucessful.Try again later.");
   };
-  const client_id = process.env.REACT_APP_CLIENT_ID;
+  const client_id = "96870954933-2ngst6l7815jh3fvhblm95hlpr32213q.apps.googleusercontent.com";
   //console.log(formData);
   return (
     <Container component="main" maxWidth="xs">
