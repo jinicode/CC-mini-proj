@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 
+const path = require("path");
 const app = express();
 dotenv.config();
 
@@ -28,12 +29,11 @@ mongoose
 
 mongoose.set("useFindAndModify", false);
 
-// if (1) {
-//   // Set static folder
-//   app.use(express.static("client/public"));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "client", "public", "index.html"));
-//   });
-// }
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
