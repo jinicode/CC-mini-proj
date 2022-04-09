@@ -28,12 +28,12 @@ mongoose
 
 mongoose.set("useFindAndModify", false);
 
-if (1) {
-  // Set static folder
-  app.use(express.static("client/public"));
+// if (1) {
+//   // Set static folder
+//   app.use(express.static("client/public"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "public", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "public", "index.html"));
+//   });
+// }
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
